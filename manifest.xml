@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+        <Set Name="PowerPointApi" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
   <Id>3d566cbc-b713-4b5c-ba01-f4c7f89929b6</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
