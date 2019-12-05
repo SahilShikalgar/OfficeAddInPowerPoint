@@ -1,4 +1,7 @@
 <main class="ms-welcome__main">
+    <br />
+        <button (click)="getSlide()">Get Slide Data</button>
+    <br />
     <input type="file" (change)="onSelectFile($event)">
     <button (click)="insertImage()">Insert Image</button>
     <br />
@@ -7,7 +10,12 @@
     <br />
     <br />
     <button (click)="createPresentation()">Create New Presentation</button>
-    <br /><br /><br />
+    <br />
+    <button (click)="goToFirstSlide()">goToFirstSlide</button>
+    <button (click)="goToLastSlide()">goToLastSlide</button>
+    <button (click)="goToPreviousSlide()">goToPreviousSlide</button>
+    <button (click)="goToNextSlide()">goToNextSlide</button>
+    <br /><br />
     <p class="ms-font-l">Modify the source files, then click <b>Run</b>.</p>
     <div role="button" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20" (click)="run()">
         <span class="ms-Button-label">Run</span>

@@ -13,7 +13,10 @@ export default class AppComponent implements OnInit {
 
   ngOnInit() {
     if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
-
+      console.log(Office);
+      // Office.context.(Office.FileType.Text,null, (data) => {
+      //   console.log("call back", data);
+      // });
     }
     else {
       // Provide alternate flow/logic.
@@ -76,5 +79,58 @@ export default class AppComponent implements OnInit {
 
   insertTable() {
     
+  }
+
+  async getSlide() {
+
+  // Can get content except images
+    // await Office.context.document.getSelectedDataAsync(
+    //   Office.CoercionType.SlideRange,
+    //   null,
+    //   result => {
+    //     console.log(result);
+    //     if (result.status === Office.AsyncResultStatus.Failed) {
+    //       console.error(result.error.message);
+    //     }
+    //   }
+    // );
+
+
+  //get selected Text or Slide from powerpoint
+    // Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, null, result => {
+    //   console.log(result);
+    // });
+
+    Office.context.document.getSelectedDataAsync(Office.CoercionType.Image, result => {
+      console.log(result);
+    });
+  }
+
+  goToFirstSlide() {
+    Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index,
+        function (asyncResult) {
+          console.log(asyncResult);
+        });
+  }
+
+  goToLastSlide() {
+      Office.context.document.goToByIdAsync(Office.Index.Last, Office.GoToType.Index,
+          function (asyncResult) {
+            console.log(asyncResult);
+          });
+  }
+
+  goToPreviousSlide() {
+      Office.context.document.goToByIdAsync(Office.Index.Previous, Office.GoToType.Index,
+          function (asyncResult) {
+            console.log(asyncResult);
+          });
+  }
+
+  goToNextSlide() {
+      Office.context.document.goToByIdAsync(Office.Index.Next, Office.GoToType.Index,
+          function (asyncResult) {
+            console.log(asyncResult);
+          });
   }
 }
